@@ -1,5 +1,11 @@
-# WordPress powered site setup
+# WordPress site setup for designers and frontend developers
+
 Starting point for WordPress powered websites using the latest versions of WordPress, a fork of @johnburns87's Down to the Bones theme and a WordPress ready version of my frontend boilerplate.
+
+This boilerplate is not intended for, nor is it suitable for standalone use. Grunt tasks will create a wp-content/ folder if none exists, so only use this as part of a complete WordPress site setup procedure.
+
+## Usage
+
 1. Create an empty git repository
 2. Add a default remote if necessary (usually called origin, on github)
 3. `git remote add -f frontend git@github.com:derekjohnson/wp-boilerplate-frontend.git`

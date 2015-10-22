@@ -189,9 +189,10 @@ module.exports = function(grunt) {
 			}
 		},
 
-		imageoptim: {
+		imageoptim: { // imageOptim, imageAlpha and jpegMini need to be installed. Also see https://www.npmjs.com/package/imageoptim-cli#jpegmini-and-support-for-assistive-devices for jpegMini to work
 			prod: {
 				options: {
+					jpegMini: true,
 					imageAlpha: true,
 					quitAfter: true
 				},

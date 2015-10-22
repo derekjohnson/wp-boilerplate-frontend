@@ -1,0 +1,104 @@
+/*! Layout */
+
+/* ==========================================================================
+   Grid system
+   ========================================================================== */
+/**
+ * Grid items must be wrapped in a container with class l-grid
+ *
+ * The styles in the media query blocks are commonly used
+ * examples. For any others that are required use the formula:
+ *
+ * (fraction * 100) - gutter
+ * where gutter is the negative left margin on .l-grid
+ *
+ * e.g. l-desk-three-fifths is (3/5 * 100) - 2.5
+ *
+ * .l-lap-half {
+ * 		@include respond-min($b2) {
+ * 			width: 47.5%; // (1/2 * 100) - 2.5
+ *		}
+ * }
+ */
+
+.l-grid {
+	margin-left: -2.5%;
+}
+
+.l-grid__item {
+	display: inline-block;
+	vertical-align: top;
+	width: 97.5%;
+	margin-left: 2.5%;
+}
+
+/* ==========================================================================
+   Media object ~ my responsive Sass take on http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+   ========================================================================== */
+.l-media {
+	margin-bottom: 1em;
+}
+
+.l-media,
+.l-media__body {
+	overflow: hidden;
+	
+	@include old-ie {
+		zoom: 1;
+	}
+
+	@include really-old-ie {
+		overflow: visible;
+	}
+}
+
+.l-media__img-wrap {
+	display: block;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		float: left;
+		width: 33%;
+		margin-right: 6%;
+	}
+}
+
+.l-media__img {
+	display: block;
+	margin: 0 auto;
+}
+
+/* ==========================================================================
+   Stretch object ~ an element containing two elements that stick to the left and right sides
+   ========================================================================== */
+.l-stretch {
+	@include respond-min($b1) {
+		text-align: right;
+	}
+}
+
+.l-stretch__item {
+	display: block;
+	clear: left;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		display: inline-block;
+		clear: none;
+		
+		@include old-ie {
+			*display: inline;
+			*zoom: 1;
+		}
+	}
+}
+
+.l-stretch__left {
+	display: block;
+	clear: left;
+	margin-bottom: 1em;
+	
+	@include respond-min($b1) {
+		float: left;
+	}
+}

@@ -197,7 +197,7 @@ module.exports = function(grunt) {
 					quitAfter: true
 				},
 
-				src: ['src/assets/png']
+				src: ['src/assets/png', 'src/assets/jpg']
 			}
 		},
 

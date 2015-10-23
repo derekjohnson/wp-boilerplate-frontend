@@ -289,6 +289,31 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Perfbudget
+		perfbudget: {
+			cable: {
+				options: {
+					url: 'http://localhost:9001',
+					key: 'A.a077e26bceab9ff8b9041cd3edbda804',
+					connectivity: 'Cable',
+					budget: {
+						visualComplete: 3000,
+						SpeedIndex: 1000,
+						bytesIn: 1000000,
+						bytesInDoc: 14000,
+						requestsDoc: 20
+					}
+				}
+			}
+		},
+
+		githooks: {
+			all: {
+				// Will run the jshint and test:unit tasks at every commit 
+				'pre-commit': 'perfbudget:cable'
+			}
+		},
+
 		// Connect plugin for server and synchronisation between browsers/devices
 		connect: {
 			server: {
